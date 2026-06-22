@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Eswarr Dasi | Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0e1a;--bg2:#0f1629;--card:#151d35;--card2:#1a2340;--accent:#6366f1;--accent2:#8b5cf6;--accent3:#06b6d4;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;--green:#10b981;--yellow:#f59e0b;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(20px);background:rgba(10,14,26,.85);border-bottom:1px solid rgba(99,102,241,.15);padding:0 5%;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{font-size:1.1rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.875rem;font-weight:500;transition:.2s;}
+.nav-links a:hover{color:var(--accent);}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(99,102,241,.12),transparent 70%);pointer-events:none;}
+.hero-tag{display:inline-block;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;margin-bottom:1.5rem;}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;margin-bottom:1rem;}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:clamp(1rem,2vw,1.25rem);color:var(--text2);max-width:600px;margin:0 auto 2.5rem;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn{padding:.75rem 2rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;transition:.3s;cursor:pointer;border:none;display:inline-block;}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;}
+.btn-primary:hover{opacity:.85;transform:translateY(-2px);}
+.btn-outline{background:transparent;border:1px solid rgba(99,102,241,.4);color:var(--text);}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;flex-wrap:wrap;}
+.stat{text-align:center;}
+.stat-num{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.stat-label{font-size:.8rem;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;}
+section{padding:80px 5%;}
+.container{max-width:1100px;margin:0 auto;}
+.section-label{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;}
+.section-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;margin-bottom:1rem;}
+.section-title span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.section-desc{color:var(--text2);max-width:600px;margin-bottom:3rem;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.about-text p{color:var(--text2);margin-bottom:1rem;line-height:1.8;}
+.contact-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+.contact-list li{display:flex;align-items:center;gap:.75rem;color:var(--text2);font-size:.9rem;}
+.contact-list a{color:var(--accent);text-decoration:none;}
+.contact-list a:hover{text-decoration:underline;}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
+.skill-card{background:var(--card);border:1px solid rgba(99,102,241,.1);border-radius:12px;padding:1.5rem;transition:.3s;}
+.skill-card:hover{border-color:rgba(99,102,241,.3);transform:translateY(-3px);}
+.skill-card-title{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.tag{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);color:var(--text);font-size:.78rem;padding:.3rem .75rem;border-radius:50px;font-weight:500;}
+.tag.green{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.2);color:#34d399;}
+.tag.cyan{background:rgba(6,182,212,.1);border-color:rgba(6,182,212,.2);color:#22d3ee;}
+.tag.yellow{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.2);color:#fbbf24;}
+.tag.purple{background:rgba(139,92,246,.1);border-color:rgba(139,92,246,.2);color:#a78bfa;}
+.timeline{position:relative;padding-left:2rem;}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),rgba(99,102,241,.1));}
+.timeline-item{position:relative;margin-bottom:2.5rem;}
+.timeline-item::before{content:'';position:absolute;left:-2.45rem;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg2);box-shadow:0 0 0 3px rgba(99,102,241,.3);}
+.job-card{background:var(--card);border:1px solid rgba(99,102,241,.1);border-radius:12px;padding:1.75rem;transition:.3s;}
+.job-card:hover{border-color:rgba(99,102,241,.25);}
+.job-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;}
+.job-title{font-size:1.1rem;font-weight:700;}
+.job-company{font-size:.95rem;font-weight:600;color:var(--accent);margin-top:.2rem;}
+.job-meta{text-align:right;}
+.job-date{font-size:.8rem;font-weight:600;background:rgba(99,102,241,.15);color:var(--accent);padding:.3rem .75rem;border-radius:50px;white-space:nowrap;}
+.job-location{font-size:.8rem;color:var(--text3);margin-top:.4rem;}
+.job-bullets{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+.job-bullets li{color:var(--text2);font-size:.9rem;padding-left:1.25rem;position:relative;line-height:1.7;}
+.job-bullets li::before{content:'\25B9';position:absolute;left:0;color:var(--accent);font-size:.8rem;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;}
+.project-card{background:var(--card);border:1px solid rgba(99,102,241,.1);border-radius:12px;padding:1.75rem;transition:.3s;display:flex;flex-direction:column;}
+.project-card:hover{border-color:rgba(99,102,241,.3);transform:translateY(-4px);}
+.project-icon{font-size:2rem;margin-bottom:1rem;}
+.project-title{font-size:1.05rem;font-weight:700;margin-bottom:.75rem;}
+.project-desc{color:var(--text2);font-size:.875rem;line-height:1.7;flex:1;margin-bottom:1.25rem;}
+.project-tech{display:flex;flex-wrap:wrap;gap:.4rem;}
+.project-tech .tag{font-size:.72rem;padding:.2rem .6rem;}
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;}
+.edu-card{background:var(--card);border:1px solid rgba(99,102,241,.1);border-radius:12px;padding:1.75rem;transition:.3s;}
+.edu-card:hover{border-color:rgba(99,102,241,.25);}
+.edu-degree{font-size:1rem;font-weight:700;margin-bottom:.4rem;}
+.edu-school{font-size:.95rem;font-weight:600;color:var(--accent);margin-bottom:.4rem;}
+.edu-date{font-size:.8rem;color:var(--text3);margin-bottom:.75rem;}
+.edu-courses{font-size:.85rem;color:var(--text2);}
+.achievements-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;}
+.achievement-item{background:var(--card);border:1px solid rgba(99,102,241,.1);border-radius:10px;padding:1.25rem;display:flex;gap:1rem;align-items:flex-start;transition:.3s;}
+.achievement-item:hover{border-color:rgba(99,102,241,.25);}
+.achievement-icon{font-size:1.5rem;flex-shrink:0;}
+.achievement-text{color:var(--text2);font-size:.875rem;line-height:1.6;}
+footer{background:var(--bg2);border-top:1px solid rgba(99,102,241,.1);text-align:center;padding:2.5rem 5%;color:var(--text3);font-size:.85rem;}
+footer a{color:var(--accent);text-decoration:none;}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;}.nav-links{display:none;}.hero-stats{gap:2rem;}.job-meta{text-align:left;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">ED</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="hero" id="home">
+  <div>
+    <div class="hero-tag">Open to opportunities</div>
+    <h1>Hi, I'm <span>Eswarr Dasi</span></h1>
+    <p class="hero-sub">Software Engineer II building full-stack financial systems with React, Spring Boot &amp; distributed microservices. Based in Bellevue, WA.</p>
+    <div class="hero-btns">
+      <a href="#experience" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-num">4x</div><div class="stat-label">UI Perf Improvement</div></div>
+      <div class="stat"><div class="stat-num">6K</div><div class="stat-label">TPS Achieved</div></div>
+      <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Projects Shipped</div></div>
+    </div>
+  </div>
+</section>
+<section id="about" style="background:var(--bg2);">
+  <div class="container">
+    <div class="section-label">About Me</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">Passionate about <span>scalable software</span></h2>
+        <p>I'm a Full Stack Software Engineer II at Valens Software, specializing in fintech — building reconciliation pipelines, bank-payment workflows, and financial-summary modules that process transactions at scale.</p>
+        <p>I hold an M.S. in Computer Science from Georgia State University and have led performance improvements from 2,000 to 6,000 TPS, reduced post-release issues by 15%, and championed AI-assisted development with GitHub Copilot.</p>
+        <p>I thrive at the intersection of clean backend architecture and intuitive frontends, mentoring teams and translating complex business requirements into elegant, well-tested solutions.</p>
+      </div>
+      <ul class="contact-list">
+        <li><span>&#128205;</span> Bellevue, WA</li>
+        <li><span>&#128222;</span> <a href="tel:+14706528984">+1 470-652-8984</a></li>
+        <li><span>&#9993;</span> <a href="mailto:eshwar4d6@gmail.com">eshwar4d6@gmail.com</a></li>
+        <li><span>&#128188;</span> <a href="https://linkedin.com/in/eswarr-dasi" target="_blank">linkedin.com/in/eswarr-dasi</a></li>
+        <li><span>&#128025;</span> <a href="https://github.com/eswarr-dasi" target="_blank">github.com/eswarr-dasi</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Technical Skills</div>
+    <h2 class="section-title">What I <span>work with</span></h2>
+    <p class="section-desc">A broad technology stack spanning frontend, backend, cloud, and data engineering.</p>
+    <div class="skills-grid">
+      <div class="skill-card"><div class="skill-card-title">Languages</div><div class="tags"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">JavaScript ES6</span><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">C++</span></div></div>
+      <div class="skill-card"><div class="skill-card-title">Web &amp; Frontend</div><div class="tags"><span class="tag cyan">React</span><span class="tag cyan">Angular</span><span class="tag cyan">Node.js</span><span class="tag cyan">Express</span><span class="tag cyan">Flask</span><span class="tag cyan">Spring Boot</span><span class="tag cyan">HTML</span><span class="tag cyan">CSS</span></div></div>
+      <div class="skill-card"><div class="skill-card-title">Databases</div><div class="tags"><span class="tag green">PostgreSQL</span><span class="tag green">MySQL</span><span class="tag green">Oracle</span><span class="tag green">Elasticsearch</span><span class="tag green">MongoDB</span><span class="tag green">Neo4j</span><span class="tag green">Redis</span></div></div>
+      <div class="skill-card"><div class="skill-card-title">Cloud &amp; DevOps</div><div class="tags"><span class="tag yellow">AWS EC2</span><span class="tag yellow">AWS S3</span><span class="tag yellow">AWS VPC</span><span class="tag yellow">CI/CD Concourse</span><span class="tag yellow">Nginx</span><span class="tag yellow">HA-Proxy</span><span class="tag yellow">Linux/RHEL</span><span class="tag yellow">Grafana</span><span class="tag yellow">Splunk</span></div></div>
+      <div class="skill-card"><div class="skill-card-title">Architecture &amp; Testing</div><div class="tags"><span class="tag purple">Microservices</span><span class="tag purple">REST APIs</span><span class="tag purple">Distributed Systems</span><span class="tag purple">JUnit</span><span class="tag purple">Mockito</span><span class="tag purple">TDD</span><span class="tag purple">SonarQube</span></div></div>
+      <div class="skill-card"><div class="skill-card-title">AI &amp; Methodologies</div><div class="tags"><span class="tag">GitHub Copilot</span><span class="tag">GenAI Workflows</span><span class="tag">Agile</span><span class="tag">Scrum</span></div></div>
+    </div>
+  </div>
+</section>
+<section id="experience" style="background:var(--bg2);">
+  <div class="container">
+    <div class="section-label">Work History</div>
+    <h2 class="section-title">Professional <span>Experience</span></h2>
+    <p class="section-desc">4+ years building production systems across fintech, research, and SaaS domains.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="job-card">
+          <div class="job-header"><div><div class="job-title">Software Engineer II, Full Stack</div><div class="job-company">Valens Software LLC</div></div><div class="job-meta"><div class="job-date">Oct 2024 – Present</div><div class="job-location">Atlanta, GA</div></div></div>
+          <ul class="job-bullets">
+            <li>Drove adoption of AI-assisted development by integrating GitHub Copilot and GenAI workflows, measurably improving team productivity.</li>
+            <li>Built full-stack features end-to-end — React &amp; TypeScript frontends backed by Spring Boot services — powering reconciliation and bank-payments financial workflows.</li>
+            <li>Designed REST APIs for reconciliation workflows (approval decisions, write-offs, reconcile groups) with comprehensive automated tests and static code analysis.</li>
+            <li>Built a Spring Batch pipeline to migrate critical bank-payments data from a legacy system to MySQL at production scale.</li>
+            <li>Implemented microservices and distributed-systems components to improve scalability, reliability, and performance of core financial services.</li>
+            <li>Partnered with product owners to scope and ship the financial-summary module, translating complex requirements into well-scoped solutions.</li>
+            <li>Mentored interns and new hires on architecture and engineering best practices.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="job-card">
+          <div class="job-header"><div><div class="job-title">Software Engineer</div><div class="job-company">JICOR Solutions</div></div><div class="job-meta"><div class="job-date">Feb 2024 – Oct 2024</div><div class="job-location">Atlanta, GA</div></div></div>
+          <ul class="job-bullets">
+            <li>Built RESTful APIs with Spring Boot and Spring Data, leveraging Java 8 features for cleaner, maintainable code.</li>
+            <li>Delivered full-stack features in an Agile team using Angular, Java 17, Spring Boot, HTML, CSS, JavaScript, and SQL.</li>
+            <li>Authored unit and integration tests with JUnit and Mockito; managed CI/CD with Concourse and log analysis with Splunk.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="job-card">
+          <div class="job-header"><div><div class="job-title">Application Developer — Graduate Research Assistant</div><div class="job-company">Georgia State University</div></div><div class="job-meta"><div class="job-date">Aug 2022 – Dec 2023</div><div class="job-location">Atlanta, GA</div></div></div>
+          <ul class="job-bullets">
+            <li>Designed and built distributed-architecture applications using OOP best practices, delivered on schedule.</li>
+            <li>Led end-to-end performance tuning: improved UI response times ~4x and throughput from 2,000 to 6,000 TPS.</li>
+            <li>Owned reliability improvements — debugging, automated testing, and observability — cutting post-release issues by 15% and MTTR by 40%.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="job-card">
+          <div class="job-header"><div><div class="job-title">Associate Software Developer</div><div class="job-company">MTek Solutions</div></div><div class="job-meta"><div class="job-date">Jul 2020 – Nov 2021</div><div class="job-location">Hyderabad, India</div></div></div>
+          <ul class="job-bullets">
+            <li>Built and operated services on AWS (EC2, S3, VPC, Security Groups) supporting SaaS delivery and NFR testing.</li>
+            <li>Developed a reporting module powered by Elasticsearch, surfacing system analytics to users.</li>
+            <li>Built a package-management module using React, Node.js, Java, and Oracle with payment-gateway integration.</li>
+            <li>Set up observability with Grafana, InfluxDB, and Telegraf; served UI via Nginx and HA-Proxy on RHEL.</li>
+            <li>Automated data lifecycle with shell scripts and provided customer onsite support.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <p class="section-desc">A selection spanning full-stack web apps, APIs, recommendation systems, and developer tools.</p>
+    <div class="projects-grid">
+      <div class="project-card"><div class="project-icon">&#127925;</div><div class="project-title">Full-Stack Playlist Web App</div><div class="project-desc">Full-stack web app with Python (Flask) and PostgreSQL storing playlists and generating randomized shuffles. Integrated Spotify and Genius REST APIs, deployed to Azure.</div><div class="project-tech"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag green">PostgreSQL</span><span class="tag yellow">Azure</span><span class="tag cyan">REST APIs</span></div></div>
+      <div class="project-card"><div class="project-icon">&#129504;</div><div class="project-title">Recommendations Generator</div><div class="project-desc">Real-time recommendation engine on Neo4j AuraDB and Node.js. Benchmarked four collaborative-filtering techniques including cosine and Pearson similarity.</div><div class="project-tech"><span class="tag cyan">Node.js</span><span class="tag">GraphQL</span><span class="tag green">Neo4j AuraDB</span><span class="tag cyan">Vue.js</span></div></div>
+      <div class="project-card"><div class="project-icon">&#128184;</div><div class="project-title">Expense Tracker API</div><div class="project-desc">Spring Boot REST API for tracking expenses and budgets with JPA, category management, budget alerts, and monthly reporting.</div><div class="project-tech"><span class="tag">Java</span><span class="tag cyan">Spring Boot</span><span class="tag green">PostgreSQL</span><span class="tag purple">REST API</span></div></div>
+      <div class="project-card"><div class="project-icon">&#128202;</div><div class="project-title">React Financial Dashboard</div><div class="project-desc">Responsive financial dashboard with React, TypeScript, and Recharts displaying expense analytics, trend charts, and real-time budget visualization.</div><div class="project-tech"><span class="tag cyan">React</span><span class="tag">TypeScript</span><span class="tag cyan">Node.js</span><span class="tag purple">Recharts</span></div></div>
+      <div class="project-card"><div class="project-icon">&#128274;</div><div class="project-title">Auth Service Microservice</div><div class="project-desc">Stateless JWT authentication microservice with Node.js, Redis token blacklisting, and RBAC for secure API protection.</div><div class="project-tech"><span class="tag cyan">Node.js</span><span class="tag">JWT</span><span class="tag green">Redis</span><span class="tag purple">RBAC</span></div></div>
+      <div class="project-card"><div class="project-icon">&#128269;</div><div class="project-title">Log Analyzer CLI</div><div class="project-desc">Python CLI that ingests server logs, indexes them into Elasticsearch, and surfaces error patterns and anomaly detection with rich terminal output.</div><div class="project-tech"><span class="tag">Python</span><span class="tag green">Elasticsearch</span><span class="tag">CLI</span><span class="tag purple">Analytics</span></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;"><a href="https://github.com/eswarr-dasi" target="_blank" class="btn btn-outline">View All on GitHub &#8594;</a></div>
+  </div>
+</section>
+<section id="education" style="background:var(--bg2);">
+  <div class="container">
+    <div class="section-label">Education</div>
+    <h2 class="section-title">Academic <span>Background</span></h2>
+    <div class="edu-grid">
+      <div class="edu-card"><div class="edu-degree">Master of Science in Computer Science</div><div class="edu-school">Georgia State University</div><div class="edu-date">2022 – Dec 2023 &middot; Atlanta, GA</div><div class="edu-courses">Relevant coursework: Advanced Databases, Operating Systems, Web Programming</div></div>
+      <div class="edu-card"><div class="edu-degree">Bachelor of Technology in Computer Science &amp; Engineering</div><div class="edu-school">RVR &amp; JC College of Engineering</div><div class="edu-date">2016 – 2020 &middot; India</div></div>
+    </div>
+  </div>
+</section>
+<section id="achievements">
+  <div class="container">
+    <div class="section-label">Recognition</div>
+    <h2 class="section-title">Achievements &amp; <span>Certifications</span></h2>
+    <div class="achievements-list">
+      <div class="achievement-item"><div class="achievement-icon">&#127942;</div><div class="achievement-text"><strong>PZ Hackathon "Best Team" Award</strong> &mdash; ExpertsHub. Led a 4-person team building a cross-platform React Native app.</div></div>
+      <div class="achievement-item"><div class="achievement-icon">&#128220;</div><div class="achievement-text"><strong>Node.js Certification</strong> &mdash; Advanced server-side JavaScript, async patterns, and API development.</div></div>
+      <div class="achievement-item"><div class="achievement-icon">&#128220;</div><div class="achievement-text"><strong>React Certification</strong> &mdash; Modern React patterns, hooks, state management, and performance optimization.</div></div>
+      <div class="achievement-item"><div class="achievement-icon">&#128220;</div><div class="achievement-text"><strong>Java Certification</strong> &mdash; Core Java, OOP principles, and enterprise application patterns.</div></div>
+      <div class="achievement-item"><div class="achievement-icon">&#128220;</div><div class="achievement-text"><strong>Software Architecture Certification</strong> &mdash; Distributed systems design, microservices, and scalable architecture patterns.</div></div>
+    </div>
+  </div>
+</section>
+<section id="contact" style="background:var(--bg2);">
+  <div class="container" style="text-align:center;">
+    <div class="section-label">Let's Connect</div>
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <p style="color:var(--text2);max-width:500px;margin:0 auto 2.5rem;">I'm open to full-time Software Engineer roles. Whether you have an opportunity, a question, or just want to say hi &mdash; I'll get back to you promptly!</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="mailto:eshwar4d6@gmail.com" class="btn btn-primary">&#9993; Send Email</a>
+      <a href="https://linkedin.com/in/eswarr-dasi" target="_blank" class="btn btn-outline">&#128188; LinkedIn</a>
+      <a href="https://github.com/eswarr-dasi" target="_blank" class="btn btn-outline">&#128025; GitHub</a>
+    </div>
+  </div>
+</section>
+<footer><p>Designed &amp; built by <a href="#home">Eswarr Dasi</a> &middot; Bellevue, WA &middot; <a href="mailto:eshwar4d6@gmail.com">eshwar4d6@gmail.com</a></p></footer>
+</body>
+</html>
