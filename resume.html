@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Eswarr Dasi – Resume</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:10.5pt;color:#202124;background:#fff;max-width:820px;margin:0 auto;padding:32px 40px}
+a{color:#1a73e8;text-decoration:none}
+h1{font-size:22pt;font-weight:700;color:#202124;letter-spacing:-.5px}
+.subtitle{font-size:10pt;color:#5f6368;margin-top:4px}
+.contact-row{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:8px;font-size:9.5pt;color:#5f6368}
+.contact-row a{color:#1a73e8}
+.g-bar{height:3px;background:linear-gradient(90deg,#4285f4 25%,#ea4335 25%,#ea4335 50%,#fbbc05 50%,#fbbc05 75%,#34a853 75%);border-radius:2px;margin:12px 0 16px}
+h2{font-size:11pt;font-weight:700;color:#1a73e8;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;border-bottom:1px solid #dadce0;padding-bottom:3px}
+.section{margin-bottom:18px}
+.job{margin-bottom:12px}
+.job-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:2px}
+.job-title{font-weight:700;font-size:10.5pt;color:#202124}
+.job-date{font-size:9.5pt;color:#5f6368;font-style:italic}
+.job-company{font-size:9.5pt;color:#1a73e8;font-weight:500;margin-bottom:4px}
+ul{list-style:none;padding:0}
+ul li{display:flex;gap:8px;font-size:9.5pt;color:#3c4043;line-height:1.55;margin-bottom:3px}
+ul li::before{content:"▸";color:#1a73e8;flex-shrink:0;font-size:9pt;margin-top:1px}
+.skills-grid{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:9.5pt}
+.skill-label{font-weight:700;color:#202124;white-space:nowrap}
+.skill-val{color:#3c4043}
+.edu-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:2px;margin-bottom:2px}
+.edu-deg{font-weight:700;font-size:10pt}
+.edu-school{font-size:9.5pt;color:#1a73e8;font-weight:500}
+.edu-detail{font-size:9pt;color:#5f6368}
+.proj{margin-bottom:8px}
+.proj-title{font-weight:700;font-size:10pt;color:#202124}
+.proj-stack{font-size:8.5pt;color:#5f6368;font-style:italic;margin-left:6px}
+.print-btn{position:fixed;top:16px;right:16px;background:#1a73e8;color:#fff;border:none;padding:8px 18px;border-radius:24px;font-size:9.5pt;font-weight:600;cursor:pointer;box-shadow:0 2px 6px rgba(60,64,67,.3)}
+.print-btn:hover{background:#1557b0}
+@media print{.print-btn{display:none}body{padding:20px 28px;font-size:10pt}h1{font-size:20pt}}
+</style>
+</head>
+<body>
+<button class="print-btn" onclick="window.print()">⬇ Print / Save PDF</button>
+
+<h1>Eswarr Dasi</h1>
+<div class="contact-row">
+  <span>+1 470-652-8984</span>
+  <span>Bellevue, WA</span>
+  <a href="mailto:eshwar4d6@gmail.com">eshwar4d6@gmail.com</a>
+  <a href="https://linkedin.com/in/eswarr-dasi" target="_blank">LinkedIn</a>
+  <a href="https://eswarr-dasi.github.io" target="_blank">eswarr-dasi.github.io</a>
+</div>
+<div class="g-bar"></div>
+
+<div class="section">
+<h2>Technical Skills</h2>
+<div class="skills-grid">
+  <span class="skill-label">Languages</span><span class="skill-val">Python, TypeScript, JavaScript (ES6), Java, SQL, C++</span>
+  <span class="skill-label">Web &amp; Frontend</span><span class="skill-val">React, TypeScript, Angular, Spring Boot, Node.js, Express, Flask, HTML, CSS</span>
+  <span class="skill-label">Databases</span><span class="skill-val">PostgreSQL, MySQL, SQL Server, Oracle, Elasticsearch, MongoDB, Neo4j, Redis</span>
+  <span class="skill-label">Cloud &amp; DevOps</span><span class="skill-val">AWS (EC2, S3, VPC, Security Groups), CI/CD (Concourse), Nginx, HA-Proxy, Linux/RHEL, Grafana, Splunk</span>
+  <span class="skill-label">Architecture</span><span class="skill-val">Distributed Systems, Microservices, REST APIs, Object-Oriented Design, Design Patterns</span>
+  <span class="skill-label">Testing &amp; Quality</span><span class="skill-val">JUnit, Mockito, Test-Driven Development (TDD), SonarQube static analysis</span>
+  <span class="skill-label">AI / Dev Tooling</span><span class="skill-val">GenAI-assisted development, GitHub Copilot</span>
+  <span class="skill-label">Methodologies</span><span class="skill-val">Agile, Scrum</span>
+</div>
+</div>
+
+<div class="section">
+<h2>Experience</h2>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Software Engineer II, Full Stack</span>
+    <span class="job-date">Oct 2024 – Present</span>
+  </div>
+  <div class="job-company">Valens Software LLC · Atlanta, GA</div>
+  <ul>
+    <li>Drove adoption of AI-assisted development by integrating GitHub Copilot and GenAI workflows across the team, streamlining delivery and measurably improving developer productivity.</li>
+    <li>Built full-stack features end-to-end — React and TypeScript frontends backed by Spring Boot services — powering reconciliation and bank-payments financial workflows.</li>
+    <li>Designed REST APIs for reconciliation workflows (approval decisions, write-offs, reconcile groups), with comprehensive automated tests and static code analysis to enforce code quality.</li>
+    <li>Built a Spring Batch pipeline to migrate critical bank-payments data from a legacy system to a relational database (MySQL) at production scale.</li>
+    <li>Implemented microservices and distributed-systems components to improve scalability, reliability, and performance of core financial services.</li>
+    <li>Mentored interns and new hires on the codebase, architecture, and engineering best practices, helping raise the technical bar.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Software Engineer</span>
+    <span class="job-date">Feb 2024 – Oct 2024</span>
+  </div>
+  <div class="job-company">JICOR Solutions · Atlanta, GA</div>
+  <ul>
+    <li>Built RESTful APIs with Spring Boot and Spring Data, applying Java 8 features (lambdas, streams, functional interfaces) for cleaner, more maintainable code.</li>
+    <li>Delivered full-stack features in an Agile team using Angular, Java 17, Spring Boot, HTML, CSS, JavaScript, and SQL.</li>
+    <li>Authored unit and integration tests with JUnit and Mockito; managed CI/CD with Concourse and log analysis with Splunk.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Application Developer (Graduate Research Assistant)</span>
+    <span class="job-date">Aug 2022 – Dec 2023</span>
+  </div>
+  <div class="job-company">Georgia State University · Atlanta, GA</div>
+  <ul>
+    <li>Designed and built distributed-architecture applications using object-oriented design and best coding practices, delivered on schedule.</li>
+    <li>Led end-to-end performance tuning across UI and backend — improving UI response times ~4x and scaling throughput from 2,000 to 6,000 TPS.</li>
+    <li>Owned reliability improvements — debugging, automated testing, and observability work — cutting post-release issues by 15% and improving mean-time-to-resolution by 40%.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Associate Software Developer</span>
+    <span class="job-date">Jul 2020 – Nov 2021</span>
+  </div>
+  <div class="job-company">MTek Solutions · Hyderabad, India</div>
+  <ul>
+    <li>Built and operated services on AWS (EC2, S3, VPC, Security Groups) supporting SaaS delivery and non-functional (NFR) testing.</li>
+    <li>Developed a reporting module powered by Elasticsearch, surfacing system data and analytics to users.</li>
+    <li>Built and owned a package-management module (creation, summarization, payment-gateway integration) using React, Node.js, Java, and Oracle.</li>
+    <li>Set up observability with Grafana, InfluxDB, and Telegraf; served UI traffic via Nginx and HA-Proxy on RHEL.</li>
+    <li>Automated the data lifecycle with shell scripts (tar + cold-storage migration); provided customer onsite support.</li>
+  </ul>
+</div>
+</div>
+
+<div class="section">
+<h2>Projects</h2>
+<div class="proj">
+  <span class="proj-title">Full-Stack Playlist Web App</span><span class="proj-stack">Python, Flask, PostgreSQL, REST APIs, Azure</span>
+  <ul><li>Built a full-stack web app with Python/Flask and PostgreSQL to store playlists and generate randomized shuffles; integrated Spotify and Genius REST APIs and deployed to Azure.</li></ul>
+</div>
+<div class="proj">
+  <span class="proj-title">Recommendations Generator</span><span class="proj-stack">Node.js, GraphQL, Neo4j AuraDB, Vue.js</span>
+  <ul><li>Built a real-time recommendation engine on Neo4j AuraDB and Node.js; implemented and benchmarked four content-based and collaborative-filtering techniques (cosine, Pearson similarity).</li></ul>
+</div>
+</div>
+
+<div class="section">
+<h2>Education</h2>
+<div style="margin-bottom:8px">
+  <div class="edu-row"><span class="edu-deg">Master of Science in Computer Science</span><span class="edu-detail">Aug 2022 – Dec 2023</span></div>
+  <div class="edu-school">Georgia State University · Atlanta, GA</div>
+  <div class="edu-detail">Relevant coursework: Advanced Databases, Operating Systems, Web Programming</div>
+</div>
+<div>
+  <div class="edu-row"><span class="edu-deg">Bachelor of Technology in Computer Science &amp; Engineering</span><span class="edu-detail">2016 – 2020</span></div>
+  <div class="edu-school">RVR &amp; JC College of Engineering · India</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Achievements &amp; Certifications</h2>
+<ul>
+  <li>Completed certifications in Node.js, React, Java, and Software Architecture.</li>
+  <li>PZ Hackathon "Best Team" award (ExpertsHub) — led a 4-person team building a cross-platform React Native app.</li>
+</ul>
+</div>
+
+</body>
+</html>
