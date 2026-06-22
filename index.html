@@ -530,7 +530,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 2
     </div>
   </div>
 </footer>
-<button class="btt" id="btt" onclick="scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
 <script>
 var canvas=document.getElementById('particles'),ctx=canvas.getContext('2d'),parts=[];
 function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}
@@ -555,12 +555,12 @@ function anim(){
   requestAnimationFrame(anim);
 }
 anim();
-var nav=document.getElementById('nav'),btt=document.getElementById('btt');
+var nav=document.getElementById('nav'),bttBtn=document.getElementById('btt');
 var secs=document.querySelectorAll('section[id]'),navAs=document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',function(){
   var y=scrollY;
   nav.classList.toggle('scrolled',y>40);
-  btt.classList.toggle('visible',y>400);
+  bttBtn.classList.toggle('visible',y>400);
   var cur='';
   secs.forEach(function(s){if(y>=s.offsetTop-120)cur=s.id;});
   navAs.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
