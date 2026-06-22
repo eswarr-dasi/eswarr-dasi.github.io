@@ -39,7 +39,7 @@ ul li::before{content:"▸";color:#1a73e8;flex-shrink:0;font-size:9pt;margin-top
 </style>
 </head>
 <body>
-<button class="print-btn" onclick="window.print()">⬇ Print / Save PDF</button>
+<button type="button" class="print-btn" id="printBtn">⬇ Print / Save PDF</button>
 
 <h1>Eswarr Dasi</h1>
 <div class="contact-row">
@@ -159,5 +159,16 @@ ul li::before{content:"▸";color:#1a73e8;flex-shrink:0;font-size:9pt;margin-top
 </ul>
 </div>
 
+<script>
+(function(){
+  var btn = document.getElementById('printBtn');
+  if(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      window.print();
+    });
+  }
+})();
+</script>
 </body>
 </html>
